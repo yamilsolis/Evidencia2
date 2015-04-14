@@ -1,0 +1,93 @@
+package evidencia2;
+
+public class ArbolBinario {
+    
+    Nodo raiz;
+
+    //Constructor para asignar un valor null al nodo raiz
+    public ArbolBinario(){
+        
+        raiz = null;
+
+    }
+    
+    /*Metodo para agregar nodos al arbol de manera recursiva,
+    llamandose a si mismos en el metodo agregarNodo, permitiendo asi
+    repetirse continuamente*/
+    public void agregarNodo(int key){
+        
+        //Se crea el nuevo nodo
+        Nodo nodoactual = new Nodo(key);
+        
+        /*Si el nodo raiz esta vacio, la variable nodo actual,
+        va a tomar el valor de la variable nodo actual*/
+        if(raiz==null){
+            
+            nodoactual.valor = nodoactual;
+
+        } else {
+            
+            //Si el hijo izquierdo esta vacio:
+            if(nodoactual.hijoizq==null){
+      
+                //Se agrega el valor y se determina que este nodo sea el actual para la proxima iteracion
+                agregarNodo(key);
+                nodoactual.hijoizq = nodoactual;
+                
+                //Si no esta vacio:
+            } else {
+
+                //Solo se agrega el valor al hijo derecho y nada mas
+                if(nodoactual.hijoder==null){
+                    
+                    agregarNodo(key);
+                    
+                }
+
+            }      
+        
+        }
+
+    }
+    
+    public void quitarNodo(Nodo nodoactual){
+    
+        /*Segun la estructura del arbol, el ultimo nodo raiz
+        no tendría hijo derecho por lo que se cumpliría la condicion.
+        Al llamar al metodo quitarNodo en la clase Principal me arrojaba
+        un error java.lang.NullerPointException*/
+        if(nodoactual.hijoder==null){
+
+            while (nodoactual.llave<=97){
+
+                quitarNodo(nodoactual);
+            
+            }
+ 
+        }
+
+    }
+    
+    //Clase que define los elementos del nodo
+    public class Nodo{
+    
+        int llave;
+        Nodo padre;
+        Nodo hijoizq;
+        Nodo hijoder;
+        Object valor;
+ 
+        //Constructor para asignar valores a las variables
+        public Nodo(int key){
+            
+            llave = key;
+            padre = null;
+            hijoizq = null;
+            hijoder = null;
+            valor = null;
+        
+        }
+    
+    }
+
+}
