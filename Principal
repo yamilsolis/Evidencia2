@@ -1,0 +1,33 @@
+package evidencia2;
+
+public class Principal {
+    
+    public static void main(String args[]){
+    
+        ArbolBinario arbolbinario = new ArbolBinario();
+        
+        //Se agregan los numeros al arbol creado
+        arbolbinario.agregarNodo(85);
+        arbolbinario.agregarNodo(86);
+        arbolbinario.agregarNodo(87);
+        arbolbinario.agregarNodo(88);
+        arbolbinario.agregarNodo(89);
+        arbolbinario.agregarNodo(90);
+        arbolbinario.agregarNodo(91);
+        arbolbinario.agregarNodo(92);
+        arbolbinario.agregarNodo(93);
+        arbolbinario.agregarNodo(94);
+        arbolbinario.agregarNodo(95);
+        arbolbinario.agregarNodo(96);
+        arbolbinario.agregarNodo(97);
+        arbolbinario.agregarNodo(98);
+        arbolbinario.agregarNodo(99);
+        arbolbinario.agregarNodo(100);
+        
+        /* El metodo para quitar nodos que no supe implementar correctamente.
+        arbolbinario.quitarNodo(null);*/
+        
+        System.out.println(arbolbinario);
+    }
+    
+}
